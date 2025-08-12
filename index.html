@@ -1,547 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>FreeFolio - Freelancer Portfolio Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Free HTML Templates" name="keywords" />
-    <meta content="Free HTML Templates" name="description" />
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      My Multidisciplinary Portfolio | Full Stack Developer | Graphic Designer |
+      Videographer
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .portfolio-item:hover .overlay {
+        opacity: 1;
+      }
+      .video-thumbnail::after {
+        content: "\f144";
+        font-family: "Font Awesome 6 Free";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 3rem;
+        opacity: 0.8;
+      }
+    </style>
   </head>
-
-  <body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-      <a href="index.html" class="navbar-brand ml-lg-3">
-        <h1 class="m-0 display-5"><span class="text-primary">Ernesto</span>Freelance</h1>
-      </a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-        <div class="navbar-nav m-auto py-0">
-          <a href="#home" class="nav-item nav-link active">Home</a>
-          <a href="#about" class="nav-item nav-link">About</a>
-          <a href="#qualification" class="nav-item nav-link">Quality</a>
-          <a href="#skill" class="nav-item nav-link">Skill</a>
-          <a href="#service" class="nav-item nav-link">Service</a>
-          <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-          <a href="#testimonial" class="nav-item nav-link">Review</a>
-          <a href="#contact" class="nav-item nav-link">Contact</a>
+  <body class="bg-gray-50 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <div class="flex items-center py-4 px-2">
+              <span class="font-semibold text-gray-900 text-lg"
+                >My Portfolio</span
+              >
+            </div>
+          </div>
+          <div class="hidden md:flex items-center space-x-1">
+            <a
+              href="#home"
+              class="py-4 px-2 text-gray-900 border-b-2 border-blue-500 font-semibold"
+              >Home</a
+            >
+            <a
+              href="#skills"
+              class="py-4 px-2 text-gray-500 hover:text-blue-500 transition duration-300"
+              >Skills</a
+            >
+            <a
+              href="#portfolio"
+              class="py-4 px-2 text-gray-500 hover:text-blue-500 transition duration-300"
+              >Portfolio</a
+            >
+            <a
+              href="#contact"
+              class="py-4 px-2 text-gray-500 hover:text-blue-500 transition duration-300"
+              >Contact</a
+            >
+          </div>
+          <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+              <svg
+                class="w-6 h-6 text-gray-500"
+                x-show="!showMenu"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </div>
-        <a href="#contact" class="btn btn-menu d-none d-lg-block" style="background-color: #457efa; color: #ffffff">Kontrata Hau</a>
+      </div>
+      <div class="hidden mobile-menu">
+        <ul class="">
+          <li>
+            <a
+              href="#home"
+              class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300"
+              >Contact</a
+            >
+          </li>
+        </ul>
       </div>
     </nav>
-    <!-- Navbar End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-danger d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 text-center text-lg-left">
-            <h3 class="text-white font-weight-normal mb-3">Naran</h3>
-            <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 4px #ffffff">Ernesto C. Belo</h1>
-            <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-            <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
-            <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-              <a href="" class="btn btn-white mr-4">Download CV</a>
-
-              <a href="#about" class="btn btn-blue d-none d-sm-block">About</a>
-            </div>
-          </div>
-          <div class="col-lg-6 px-8 pl-lg-0 pb-5 pb-lg-4 about-img">
-            <img class="img-fluid w-100 rounded-circle shadow-sm img-thumbnail" src="img/Profile.jpg" alt="" />
-            <!-- <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.png" alt=""> -->
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="py-20 bg-gradient-to-r from-blue-500 to-purple-600"
+    >
+      <div
+        class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center"
+      >
+        <div
+          class="md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d562ec06-fb3d-4214-807e-729ff4b79db2.png"
+            alt="Professional portrait of a multidisciplinary creative professional with a modern background"
+            class="rounded-full border-4 border-white shadow-xl"
+          />
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Ernesto C. Belo
+          </h1>
+          <h2 class="text-2xl md:text-3xl text-white mb-6">
+            Full Stack Developer & Creative Professional
+          </h2>
+          <p class="text-white text-lg mb-8 max-w-md mx-auto md:mx-0">
+            I build innovative web solutions, create captivating designs, and
+            produce high-quality video content that tells compelling stories.
+          </p>
+          <p class="text-white text-lg mb-8 max-w-md mx-auto md:mx-0">
+            Hau bele kria solusaun web inovativu, kria dezenu ne'ebe atrativu,
+            no rezultadu konteudu video ne'ebe kualidade a'as no konta istoria
+            sira interesadu.
+          </p>
+          <div class="flex justify-center md:justify-start space-x-4">
+            <a
+              href="#portfolio"
+              class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-100 transition duration-300"
+              >View My Work</a
+            >
+            <a
+              href="#contact"
+              class="border-2 border-white text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-blue-600 transition duration-300"
+              >Contact Me</a
+            >
           </div>
         </div>
       </div>
-    </div>
-    <!-- Header End -->
+    </section>
 
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-      <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-          <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6">About</h1>
-          <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
-        </div>
-        <div class="row align-items-center">
-          <div class="col-lg-5 pb-4 pb-lg-0">
-            <img class="img-fluid rounded w-100" src="img/about.jpg" alt="" />
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+          My Skills
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Full Stack Developer Card -->
+          <div
+            class="skill-card bg-white rounded-lg shadow-lg p-6 transition duration-500 ease-in-out"
+          >
+            <div class="text-center mb-4">
+              <i class="fas fa-laptop-code text-5xl text-blue-500 mb-4"></i>
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                Full Stack Development
+              </h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-700">Frontend:</h4>
+                <p class="text-gray-600">
+                  HTML5, CSS3, JavaScript (ES6+), React, Vue.js, Tailwind CSS
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Backend:</h4>
+                <p class="text-gray-600">
+                  Node.js, Express, Python, Django, PHP, Laravel
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Database:</h4>
+                <p class="text-gray-600">
+                  MySQL, MongoDB, PostgreSQL, Firebase
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-7">
-            <h3 class="mb-4">UI/UX Designer & Web Developer</h3>
-            <p>
-              Sumariu Profesional Esperiensia Serbisu Tinan 5+ Iha Area Teknolojia Informasaun No Komunikasaun, Lojistikas Nomos Administrasaun Baze-De-Dadus. Lisensiadu Iha Enjeñaria Informatika Iha 2017 Ho IPK 2.98 Husi Universidade
-              Nasional Timor Lorosa’e (UNTL). Ho Espiritu Voluntariu Boot, Interese Ba Projetus Dezenvolvimentu, Liuliu Relasiona Ho Area Informatica Ninian.
+
+          <!-- Graphic Design Card -->
+          <div
+            class="skill-card bg-white rounded-lg shadow-lg p-6 transition duration-500 ease-in-out"
+          >
+            <div class="text-center mb-4">
+              <i class="fas fa-palette text-5xl text-purple-500 mb-4"></i>
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                Graphic Design
+              </h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-700">Design Tools:</h4>
+                <p class="text-gray-600">
+                  Adobe Photoshop, Illustrator, InDesign, XD, Figma, Sketch
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Skills:</h4>
+                <p class="text-gray-600">
+                  Logo design, Brand identity, Print media, UI/UX design,
+                  Illustration
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Specialties:</h4>
+                <p class="text-gray-600">
+                  Minimalist design, Corporate branding, Social media graphics
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Videography Card -->
+          <div
+            class="skill-card bg-white rounded-lg shadow-lg p-6 transition duration-500 ease-in-out"
+          >
+            <div class="text-center mb-4">
+              <i class="fas fa-video text-5xl text-red-500 mb-4"></i>
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">Videography</h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-700">Production:</h4>
+                <p class="text-gray-600">
+                  Pre-production planning, Cinematography, Lighting setup
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Post-Production:</h4>
+                <p class="text-gray-600">
+                  Adobe Premiere Pro, After Effects, DaVinci Resolve, Final Cut
+                  Pro
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Specialties:</h4>
+                <p class="text-gray-600">
+                  Corporate videos, Event coverage, Product showcases, Short
+                  films
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+          My Portfolio
+        </h2>
+
+        <!-- Portfolio Filter -->
+        <div class="flex justify-center mb-12">
+          <div class="inline-flex rounded-md shadow-sm" role="group">
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-l-lg hover:bg-blue-600 focus:z-10"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium text-gray-900 bg-white hover:bg-gray-100 focus:z-10"
+              data-filter="development"
+            >
+              Development
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium text-gray-900 bg-white hover:bg-gray-100 focus:z-10"
+              data-filter="design"
+            >
+              Design
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium text-gray-900 bg-white hover:bg-gray-100 rounded-r-lg focus:z-10"
+              data-filter="video"
+            >
+              Video
+            </button>
+          </div>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Development Project 1 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group development"
+          >
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/34b41760-ab10-4da6-946c-d10dd54c96de.png"
+              alt="Modern e-commerce website dashboard with analytics charts and product management interface"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white opacity-0 transition-opacity duration-500 p-6"
+            >
+              <h3 class="text-2xl font-bold mb-2">E-Commerce Platform</h3>
+              <p class="text-center mb-4">
+                Full stack MERN application with payment integration and
+                inventory management.
+              </p>
+              <a
+                href="#"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Design Project 1 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group design"
+          >
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2b1faf0f-bc69-43f1-a7fc-a15e7309d6e8.png"
+              alt="Modern brand identity design with minimalist logo, business cards, and stationery set in navy blue and gold colors"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white opacity-0 transition-opacity duration-500 p-6"
+            >
+              <h3 class="text-2xl font-bold mb-2">Corporate Brand Identity</h3>
+              <p class="text-center mb-4">
+                Complete branding package including logo, business cards, and
+                stationery.
+              </p>
+              <a
+                href="#"
+                class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-full"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Video Project 1 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group video"
+          >
+            <div class="video-thumbnail relative">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5eab27d9-2668-491b-835f-94e1001ef255.png"
+                alt="Still from corporate promotional video showing a team working in a modern office environment with natural lighting"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white opacity-0 transition-opacity duration-500 p-6"
+            >
+              <h3 class="text-2xl font-bold mb-2">Corporate Promo Video</h3>
+              <p class="text-center mb-4">
+                Company overview video including interviews and facility
+                showcase.
+              </p>
+              <a
+                href="#"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full"
+                >View Video</a
+              >
+            </div>
+          </div>
+
+          <!-- Development Project 2 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group development"
+          >
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1f5ed7ab-f0a3-480b-95e2-f266b41dee8e.png"
+              alt="Interactive dashboard interface with data visualization charts and analytics metrics"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white opacity-0 transition-opacity duration-500 p-6"
+            >
+              <h3 class="text-2xl font-bold mb-2">Data Analytics Dashboard</h3>
+              <p class="text-center mb-4">
+                Real-time data visualization using React and D3.js with Node.js
+                backend.
+              </p>
+              <a
+                href="#"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Design Project 2 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group design"
+          >
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8a03f3e7-3743-4266-9db2-06e69a5e3c63.png"
+              alt="Mobile app UI/UX screens showing a fitness tracking application with dark theme and vibrant accent colors"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white opacity-0 transition-opacity duration-500 p-6"
+            >
+              <h3 class="text-2xl font-bold mb-2">Fitness App UI/UX</h3>
+              <p class="text-center mb-4">
+                User interface and experience design for a fitness tracking
+                mobile app.
+              </p>
+              <a
+                href="#"
+                class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-full"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Video Project 2 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group video"
+          >
+            <div class="video-thumbnail relative">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb69580c-0441-4f05-b124-93150486183f.png"
+                alt="Product demonstration video still showing a tech gadget with close-up shots and smooth camera movements"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+            <div
+              class="overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white opacity-0 transition-opacity duration-500 p-6"
+            >
+              <h3 class="text-2xl font-bold mb-2">Product Demo Video</h3>
+              <p class="text-center mb-4">
+                Close-up shots and animations showcasing product features.
+              </p>
+              <a
+                href="#"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full"
+                >View Video</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+          Get In Touch
+        </h2>
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+              Let's work together
+            </h3>
+            <p class="text-gray-600 mb-8">
+              Whether you need a website, design work, or video production, I'd
+              love to hear about your project. Fill out the form or reach out
+              directly via email or phone.
             </p>
-            <div class="row mb-3">
-              <div class="col-sm-6 py-2">
-                <h6>Name: <span class="text-secondary">Ernesto Correia Belo</span></h6>
+            <p class="text-gray-600 mb-8">
+              Karik ita-boot presiza website, serbisu dezeñu, ka produsaun
+              vídeo, ha'u hakarak rona kona-ba ita-boot nia projetu. Prenxe
+              formuláriu ka kontaktu diretamente liu hosi email ka telefone.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-blue-500 text-xl mr-4"></i>
+                <span>ecodingbgmail.com</span>
               </div>
-              <div class="col-sm-6 py-2">
-                <h6>Birthday: <span class="text-secondary">.....</span></h6>
+              <div class="flex items-center">
+                <i class="fas fa-phone text-blue-500 text-xl mr-4"></i>
+                <span>(+670) 7447 4867</span>
               </div>
-              <div class="col-sm-6 py-2">
-                <h6>Degree: <span class="text-secondary">Bachelor</span></h6>
-              </div>
-              <div class="col-sm-6 py-2">
-                <h6>Experience: <span class="text-secondary">5+</span></h6>
-              </div>
-              <div class="col-sm-6 py-2">
-                <h6>Phone: <span class="text-secondary">+670 7543 9103/7447 4867</span></h6>
-              </div>
-              <div class="col-sm-6 py-2">
-                <h6>Email: <span class="text-secondary">cbeloernesto@gmail.com</span></h6>
-              </div>
-              <div class="col-sm-6 py-2">
-                <h6>Address: <span class="text-secondary">Beco-Amular,Dili, Timor-Leste</span></h6>
-              </div>
-              <div class="col-sm-6 py-2">
-                <h6>Freelance: <span class="text-secondary">Disponivel</span></h6>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-blue-500 text-xl mr-4"></i>
+                <span>Liquica-Tibar, LT</span>
               </div>
             </div>
-            <a href="#contact" class="btn blue btn-outline-primary mr-4">Kontrata hau</a>
-            <!-- <a href="" class="btn btn-outline-primary">Learn More</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-      <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-          <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6">Skills</h1>
-          <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-        </div>
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">HTML</h6>
-                <h6 class="font-weight-bold">95%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">CSS</h6>
-                <h6 class="font-weight-bold">85%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">Js</h6>
-                <h6 class="font-weight-bold">65%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">Bootstrap</h6>
-                <h6 class="font-weight-bold">90%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">Web Design</h6>
-                <h6 class="font-weight-bold">90%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">Web Development</h6>
-                <h6 class="font-weight-bold">95%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">Graphic Design</h6>
-                <h6 class="font-weight-bold">85%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <h6 class="font-weight-bold">Photographer</h6>
-                <h6 class="font-weight-bold">90%</h6>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Skill End -->
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-      <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-          <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6">Quality</h1>
-          <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
-        </div>
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h3 class="mb-4">My Education</h3>
-            <div class="border-left border-primary pt-2 pl-4 ml-2">
-              <div class="position-relative ex-me mb-4">
-                <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px"></i>
-                <h5 class="font-weight-bold mb-1">Bachelor of informatics</h5>
-                <p class="mb-2"><strong>Naional university</strong> | <small>2012 – 2017</small></p>
-                <p>Lisensiadu Enjeñaria Informátika (L.Inf), Universidade Nasional Timor Lorosa’e (UNTL), Hera, Dili Timor-Leste. (IPK 2.98) Sertifikadu. Projetu teze final Sistema informasaun Alumni departamentu Mekanika</p>
-              </div>
-              <div class="position-relative ex-me mb-4">
-                <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px"></i>
-                <h5 class="font-weight-bold mb-1">Natural Scince</h5>
-                <p class="mb-2"><strong>High school</strong> | <small>2005 - 2008</small></p>
-                <p>Escola Secundaria Katolika Sagrado Coracão De Jesus, Bekora, Dili, Timor-Leste. Sertifikadu</p>
-              </div>
-              <div class="position-relative ex-me mb-4">
-                <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px"></i>
-                <h5 class="font-weight-bold mb-1">High school education</h5>
-                <p class="mb-2"><strong>Junior high school</strong> | <small>2002 - 2005</small></p>
-                <p>Escola Pre-Sekunaria Sergio Viera De Melho Numeiru 3, Bekora, Dili, Timor-Leste. Sertifikadu</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="mb-4">Esperiensia Servisu</h3>
-            <div class="border-left border-primary pt-2 pl-4 ml-2">
-              <div class="position-relative ex-me mb-4">
-                <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px"></i>
-                <h5 class="font-weight-bold mb-1">Full Stack Web Development</h5>
-                <p class="mb-2"><strong>Soft Company</strong> | <small> Excellent</small></p>
-                <p>Servisu Dezenvolve Portal Durante Tinan Tolu Resin, Kria Personal Portfolio, Kompania Protfolio No Protal Instituisaun Jestaun Baze Dadus Formandu No Funsionariu</p>
-              </div>
-              <div class="position-relative ex-me mb-4">
-                <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px"></i>
-                <h5 class="font-weight-bold mb-1">Graphic Design</h5>
-                <p class="mb-2"><strong>Soft Company</strong> | <small> Good</small></p>
-                <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
-              </div>
-              <div class="position-relative ex-me mb-4">
-                <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px"></i>
-                <h5 class="font-weight-bold mb-1">IT And Administrative Technical Support</h5>
-                <p class="mb-2"><strong>Soft Company</strong> | <small> Excellent</small></p>
-                <p>Servisu Apoiu Informasaun Teknolijia No Apoiu Servisu Teknika Administrativu Durante Tinan Tolu Resin Iha CNEFP, Tibar</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Qualification End -->
-
-    <!-- Services Start -->
-    <div class="container-fluid pt-5" id="service">
-      <div class="container">
-        <div class="service-h4 position-relative d-flex align-items-center justify-content-center">
-          <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6">Service</h1>
-          <h1 class="position-absolute text-uppercase text-primary">My Services</h1>
-        </div>
-        <div class="row pb-3">
-          <div class="service-box col-lg-4 col-md-6 text-center mb-5">
-            <div class="d-flex align-items-center justify-content-center mb-4">
-              <i class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"></i>
-              <h4 class="font-weight-bold m-0">Web Design</h4>
-            </div>
-            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
-            <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-          </div>
-          <div class="service-box col-lg-3 col-md-6 text-center mb-5">
-            <div class="d-flex align-items-center justify-content-center mb-4">
-              <i class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"></i>
-              <h4 class="font-weight-bold m-0">Graphic Design</h4>
-            </div>
-            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem</p>
-            <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-          </div>
-          <div class="service-box col-lg-4 col-md-6 text-center mb-5">
-            <div class="d-flex align-items-center justify-content-center mb-4">
-              <i class="fab fa-2x fa-android service-icon bg-primary text-white mr-3"></i>
-              <h4 class="font-weight-bold m-0">Photographer</h4>
-            </div>
-            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
-            <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-          </div>
-          <div class="service-box col-lg-4 col-md-6 text-center mb-5">
-            <div class="d-flex align-items-center justify-content-center mb-4">
-              <i class="fab fa-2x fa-apple service-icon bg-primary text-white mr-3"></i>
-              <h4 class="font-weight-bold m-0">Business Guide</h4>
-            </div>
-            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem Amet lorem lorem</p>
-            <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-          </div>
-          <div class="service-box col-lg-3 col-md-6 text-center mb-5">
-            <div class="d-flex align-items-center justify-content-center mb-4">
-              <i class="fa fa-2x fa-search service-icon bg-primary text-white mr-3"></i>
-              <h4 class="font-weight-bold m-0">SEO</h4>
-            </div>
-            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem</p>
-            <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-          </div>
-          <div class="service-box col-lg-4 col-md-7 text-center mb-5">
-            <div class="d-flex align-items-center justify-content-center mb-4">
-              <i class="fa fa-2x fa-edit service-icon bg-primary text-white mr-3"></i>
-              <h4 class="font-weight-bold m-0">Content Creating</h4>
-            </div>
-            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore eirmod erat clita</p>
-            <a class="border-bottom border-primary text-decoration-none" href="">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Services End -->
-
-    <!-- Portfolio Start -->
-    <div class="container-fluid pt-5 pb-3" id="portfolio">
-      <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-          <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6">Gallery</h1>
-          <h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
-        </div>
-        <div class="row">
-          <div class="col-12 text-center mb-2">
-            <ul class="list-inline mb-4" id="portfolio-flters">
-              <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
-              <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Web Design</li>
-              <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Graphic Design</li>
-              <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Photographer</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="img-fluid rounded w-100" src="img/portfolio-1.jpg" alt="" />
-              <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                  <i class="fa fa-plus text-white" style="font-size: 60px"></i>
+            <div class="mt-8">
+              <h4 class="text-lg font-semibold mb-4">Connect with me:</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-700 hover:text-blue-500">
+                  <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">
+                  <i class="fab fa-github text-2xl"></i>
+                </a>
+                <!-- <a href="#" class="text-gray-700 hover:text-blue-500">
+                  <i class="fab fa-dribbble text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">
+                  <i class="fab fa-behance text-2xl"></i>
+                </a> -->
+                <a href="#" class="text-gray-700 hover:text-blue-500">
+                  <i class="fab fa-youtube text-2xl"></i>
                 </a>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="img-fluid rounded w-100" src="img/portfolio-2.jpg" alt="" />
-              <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                  <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                </a>
+          <div class="md:w-1/2">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Your Name"
+                />
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="img-fluid rounded w-100" src="img/portfolio-3.jpg" alt="" />
-              <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                  <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                </a>
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="your@email.com"
+                />
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="img-fluid rounded w-100" src="img/portfolio-4.jpg" alt="" />
-              <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                  <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                </a>
+              <div>
+                <label
+                  for="service"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Service Needed</label
+                >
+                <select
+                  id="service"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="">Select a service</option>
+                  <option value="development">Web Development</option>
+                  <option value="design">Graphic Design</option>
+                  <option value="video">Videography</option>
+                  <option value="multiple">Multiple Services</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="img-fluid rounded w-100" src="img/portfolio-5.jpg" alt="" />
-              <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                  <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                </a>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Tell me about your project..."
+                ></textarea>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="img-fluid rounded w-100" src="img/portfolio-6.jpg" alt="" />
-              <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                  <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio End -->
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5" id="testimonial">
-      <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-          <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6">Review</h1>
-          <h1 class="position-absolute text-uppercase text-primary">Clients Say</h1>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <div class="owl-carousel testimonial-carousel">
-              <div class="text-center">
-                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                <img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px" />
-                <h5 class="font-weight-bold m-0">Client Name</h5>
-                <span>Profession</span>
-              </div>
-              <div class="text-center">
-                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                <img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px" />
-                <h5 class="font-weight-bold m-0">Client Name</h5>
-                <span>Profession</span>
-              </div>
-              <div class="text-center">
-                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                <img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px" />
-                <h5 class="font-weight-bold m-0">Client Name</h5>
-                <span>Profession</span>
-              </div>
-            </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Testimonial End -->
+    </section>
 
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-      <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-          <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6">Contact</h1>
-          <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="contact-form text-center">
-              <div id="success"></div>
-              <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                <div class="form-row">
-                  <div class="control-group col-sm-6">
-                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="control-group col-sm-6">
-                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="control-group">
-                  <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="control-group">
-                  <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div>
-                  <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send Message</button>
-                </div>
-              </form>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h2 class="text-2xl font-bold">Ernesto C. Belo</h2>
+            <p class="mt-2 text-gray-400">
+              Full Stack Developer | Graphic Designer | Videographer
+            </p>
+          </div>
+          <div class="flex flex-col items-center md:items-end">
+            <div class="flex space-x-6 mb-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-linkedin text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <!-- <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-dribbble text-xl"></i>
+              </a> -->
+              <!-- <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-behance text-xl"></i>
+              </a> -->
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-youtube text-xl"></i>
+              </a>
             </div>
+            <p class="text-gray-400 text-sm">
+              © 2025 Ernesto C. Belo. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Contact End -->
+    </footer>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-danger text-white mt-5 py-1 px-sm-1 px-md-5">
-      <div class="container text-center py-5">
-        <div class="d-flex justify-content-center mb-4">
-          <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-          <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a class="btn btn-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-        <div class="d-flex justify-content-center mb-3">
-          <a class="text-white" href="#">Privacy</a>
-          <span class="px-3">|</span>
-          <a class="text-white" href="#">Terms</a>
-          <span class="px-3">|</span>
-          <a class="text-white" href="#">FAQs</a>
-          <span class="px-3">|</span>
-          <a class="text-white" href="#">Help</a>
-        </div>
-        <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">E-Coding Business</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="#">ECB</a></p>
-      </div>
-    </div>
-    <!-- Footer End -->
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector(".mobile-menu-button")
+        .addEventListener("click", function () {
+          document.querySelector(".mobile-menu").classList.toggle("hidden");
+        });
 
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+      // Portfolio filter
+      const filterBtns = document.querySelectorAll("[data-filter]");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Update active button
+          filterBtns.forEach((b) =>
+            b.classList.remove("bg-blue-500", "text-white")
+          );
+          this.classList.add("bg-blue-500", "text-white");
 
-    <!-- JavaScript Libraries -->
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+          const filter = this.dataset.filter;
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+          // Filter items
+          portfolioItems.forEach((item) => {
+            if (filter === "all" || item.classList.contains(filter)) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+
+          // Close mobile menu if open
+          document.querySelector(".mobile-menu").classList.add("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
